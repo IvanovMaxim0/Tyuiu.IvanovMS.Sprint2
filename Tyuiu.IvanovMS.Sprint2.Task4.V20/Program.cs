@@ -21,15 +21,16 @@ class Program
         Console.WriteLine("***************************************************************************");
         Console.WriteLine("* ИСХОДНЫЕ ДАННЫЕ:                                                        *");
         Console.WriteLine("***************************************************************************");
-        Console.WriteLine("Введите значение х:");
-        int x = 0;
-        x = Convert.ToInt32(Console.ReadLine());
-        Console.WriteLine("Введите значение y:");
-        int y = 0;
-        y = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Введите значение х: ");
+        double x = 0;
+        x = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Введите значение y: ");
+        double y = 0;
+        y = Convert.ToDouble(Console.ReadLine());
+        double res = ds.Calculate(x, y);
         Console.WriteLine("***************************************************************************");
         Console.WriteLine("* РЕЗУЛЬТАТ:                                                              *");
         Console.WriteLine("***************************************************************************");
-        Console.WriteLine(ds.Calculate(x, y));
+        Console.WriteLine(res);
     }
 }
