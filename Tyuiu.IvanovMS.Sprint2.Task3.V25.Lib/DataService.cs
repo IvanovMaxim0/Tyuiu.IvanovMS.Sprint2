@@ -9,13 +9,13 @@ namespace Tyuiu.IvanovMS.Sprint2.Task3.V25.Lib
 
             if (x > 1)
             {
-                y = Math.Round(Math.Pow(Math.Sin(x), 3) + Math.Pow(((x + 1) / (x - 1)), x), 3);
+                y = Math.Round(Math.Sin(Math.Pow(x, 3)) + Math.Pow((x + 1) / (x - 1), x), 3);
             }
             else
             {
                 if (x == 0)
                 {
-                    y = Math.Round(Math.Pow(x, 2) - ((Math.Pow(Math.Cos(x), 3)) / (x - 3)), 3);
+                    y = Math.Round(Math.Pow(x, 2) - (Math.Cos(Math.Pow(x, 3)) / (x - 3)), 3);
                 }
                 else
                 {
@@ -27,7 +27,7 @@ namespace Tyuiu.IvanovMS.Sprint2.Task3.V25.Lib
                     { 
                         if (x < -29)
                         {
-                            y = Math.Round(x + 15 + (12 / x) * x, 3);
+                            y = Math.Round(x + 15 + ((12 / x) * x), 3);
                         }
                     }
                 }

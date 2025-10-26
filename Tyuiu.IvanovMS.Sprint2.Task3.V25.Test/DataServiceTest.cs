@@ -8,9 +8,9 @@ namespace Tyuiu.IvanovMS.Sprint2.Task3.V25.Test
         public void ValidCondition1()
         {
             DataService ds = new DataService();
-            double x = 1;
+            double x = 5;
             double res = ds.Calculate(x);
-            double wait = 4;
+            double wait = 6.978;
             Assert.AreEqual(wait, res);
         }
         
@@ -18,9 +18,9 @@ namespace Tyuiu.IvanovMS.Sprint2.Task3.V25.Test
         public void ValidCondition2()
         {
             DataService ds = new DataService();
-            double x = 1;
+            double x = 5;
             double res = ds.Calculate(x);
-            double wait = 4;
+            double wait = 6.978;
             Assert.AreEqual(wait, res);
         }
 
@@ -28,9 +28,9 @@ namespace Tyuiu.IvanovMS.Sprint2.Task3.V25.Test
         public void ValidCondition3()
         {
             DataService ds = new DataService();
-            double x = 1;
+            double x = 5;
             double res = ds.Calculate(x);
-            double wait = 4;
+            double wait = 6.978;
             Assert.AreEqual(wait, res);
         }
 
@@ -38,9 +38,9 @@ namespace Tyuiu.IvanovMS.Sprint2.Task3.V25.Test
         public void ValidCondition4()
         {
             DataService ds = new DataService();
-            double x = 1;
+            double x = 5;
             double res = ds.Calculate(x);
-            double wait = 4;
+            double wait = 6.978;
             Assert.AreEqual(wait, res);
         }
     }
