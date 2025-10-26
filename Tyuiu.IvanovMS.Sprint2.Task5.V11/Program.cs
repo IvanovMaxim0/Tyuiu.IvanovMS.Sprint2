@@ -19,10 +19,28 @@ class Program
         Console.WriteLine("***************************************************************************");
         Console.WriteLine("* ИСХОДНЫЕ ДАННЫЕ:                                                        *");
         Console.WriteLine("***************************************************************************");
-        int value = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Введите год:");
+        int g = int.Parse(Console.ReadLine());
+
+        Console.WriteLine("Введите порядковый номер месяца:");
+        int m = int.Parse(Console.ReadLine());
+
+        Console.WriteLine("Введите число:");
+        int n = int.Parse(Console.ReadLine());
+
         Console.WriteLine("***************************************************************************");
         Console.WriteLine("* РЕЗУЛЬТАТ:                                                              *");
         Console.WriteLine("***************************************************************************");
-        Console.WriteLine(ds.FindDateOfNextDay(value));
+
+        if (g <= 0 || m <= 0 || m > 12 || n <= 0 || n > 31)
+        {
+            Console.WriteLine("Введены некорректные данные!");
+        }
+        else
+        {
+            Console.WriteLine(ds.FindDateOfNextDay(g, m, n));
+        }
+
+        Console.ReadKey();
     }
 }
