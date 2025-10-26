@@ -6,87 +6,115 @@ namespace Tyuiu.IvanovMS.Sprint2.Task5.V11.Lib
         public string FindDateOfNextDay(int g, int m, int n)
         {
             {
-                int nextg, nextm, nextn;
+                int res_n;
+                string date;
+
+                res_n = 0;
 
                 switch (m)
                 {
+                    case 1:
+                        res_n = 31;
+
+                        break;
                     case 2:
-                        if (n < 28)
-                        {
-                            nextg = g;
-                            nextm = m;
-                            nextn = n + 1;
-                        }
-                        else if (n == 28)
-                        {
-                            nextg = g;
-                            nextm = m + 1;
-                            nextn = 1;
-                        }
-                        else
-                        {
-                            nextg = 0;
-                            nextm = 0;
-                            nextn = 0;
-                        }
+                        res_n = 28;
+                        break;
+                    case 3:
+                        res_n = 31;
                         break;
                     case 4:
+                        res_n = 30;
+                        break;
+                    case 5:
+                        res_n = 31;
+                        break;
                     case 6:
+                        res_n = 30;
+                        break;
+                    case 7:
+                        res_n = 31;
+                        break;
+                    case 8:
+                        res_n = 31;
+                        break;
                     case 9:
+                        res_n = 30;
+                        break;
+                    case 10:
+                        res_n = 31;
+                        break;
                     case 11:
-                        if (n < 30)
-                        {
-                            nextg = g;
-                            nextm = m;
-                            nextn = n + 1;
-                        }
-                        else if (n == 30)
-                        {
-                            nextg = g;
-                            nextm = m + 1;
-                            nextn = 1;
-                        }
-                        else
-                        {
-                            nextg = 0;
-                            nextm = 0;
-                            nextn = 0;
-                        }
+                        res_n = 30;
                         break;
-
+                    case 12:
+                        res_n = 31;
+                        break;
                     default:
-                        if (n < 31)
+                        throw new ArgumentException($"Месяц должен быть от 1 до 12. Значение {m}");
+
+                }
+                if (n < res_n)
+                {
+                    n = n + 1;
+
+
+                }
+                else
+                {
+                    if (n == res_n & m != 12)
+                    {
+                        n = 1;
+                        m = m + 1;
+
+                    }
+                    else
+                    {
+                        if (n == res_n & m == 12)
                         {
-                            nextg = g;
-                            nextm = m;
-                            nextn = n + 1;
-                        }
-                        else if (n == 31)
-                        {
-                            nextg = g;
-                            if (m == 12)
-                            {
-                                nextm = 1;
-                                nextg = g + 1;
-                            }
-                            else
-                            {
-                                nextm = m + 1;
-                            }
-                            nextn = 1;
+                            n = 1;
+                            m = 1;
+                            g = g + 1;
                         }
                         else
                         {
-                            nextg = 0;
-                            nextm = 0;
-                            nextn = 0;
+                            if (n > res_n || m > 12 || m < 1 || g < 0)
+                            {
+                                date = "Неверный ввод.";
+                            }
                         }
-                        break;
-                }
-                string res = Convert.ToString(($"Следующий день: {nextn}.{nextm}.{nextg}"));
-                return res;
-            }
+                    }
 
+                }
+                //string rn = n.ToString();
+                //string rm = m.ToString();
+                //string rg = g.ToString();
+                if (n < 10 & m < 10)
+                {
+                    date = "0" + n + "." + "0" + m + "." + g;
+                }
+                else
+                {
+                    if (m < 10)
+                    {
+                        date = n + "." + "0" + m + "." + g;
+                    }
+                    else
+                    {
+                        if (n < 10)
+                        {
+                            date = "0" + n + "." + m + "." + g;
+                        }
+                        else
+                        {
+                            date = n + "." + m + "." + g;
+                        }
+                    }
+                }
+
+                return date;
+            }
         }
     }
 }
+

@@ -19,28 +19,29 @@ class Program
         Console.WriteLine("***************************************************************************");
         Console.WriteLine("* ИСХОДНЫЕ ДАННЫЕ:                                                        *");
         Console.WriteLine("***************************************************************************");
-        Console.WriteLine("Введите год:");
-        int g = int.Parse(Console.ReadLine());
+        Console.Write("Введите число: ");
+        int n = Convert.ToInt32(Console.ReadLine());
+        Console.Write("Введите месяц: ");
+        int m = Convert.ToInt32(Console.ReadLine());
+        Console.Write("Введите год: ");
+        int g = Convert.ToInt32(Console.ReadLine());
 
-        Console.WriteLine("Введите порядковый номер месяца:");
-        int m = int.Parse(Console.ReadLine());
-
-        Console.WriteLine("Введите число:");
-        int n = int.Parse(Console.ReadLine());
+        string date;
+        if (m > 12 || m < 1 || g < 0)
+        {
+            date = "Введено неверное значение";
+        }
+        else
+        {
+            date = "Дата следующего дня: " + ds.FindDateOfNextDay(g, m, n);
+        }
 
         Console.WriteLine("***************************************************************************");
         Console.WriteLine("* РЕЗУЛЬТАТ:                                                              *");
         Console.WriteLine("***************************************************************************");
 
-        if (g <= 0 || m <= 0 || m > 12 || n <= 0 || n > 31)
-        {
-            Console.WriteLine("Введены некорректные данные!");
-        }
-        else
-        {
-            Console.WriteLine(ds.FindDateOfNextDay(g, m, n));
-        }
-
+        Console.WriteLine(date);
         Console.ReadKey();
+
     }
 }
